@@ -8,14 +8,13 @@ class ContaCorrente {
   saldo;
 
   sacar(valor) {
-    if(this.saldo >= valor) {
+    if (this.saldo >= valor) {
       this.saldo -= valor;
     }
   }
 
   depositar(valor) {
-    if (valor > 0)
-      this.saldo += valor;
+    if (valor > 0) this.saldo += valor;
   }
 }
 
@@ -30,10 +29,13 @@ cliente2.nome = "Alice";
 cliente2.cpf = 88822233309;
 
 const contaCorrenteRicardo = new ContaCorrente();
-contaCorrenteRicardo.saldo = 0;
 contaCorrenteRicardo.agencia = 1001;
+contaCorrenteRicardo.saldo = 0;
+// para um valor privado de saldo, teria q ser escrito #saldo MAS isso ainda não está implementado na linguagem
 
 contaCorrenteRicardo.depositar(100);
-contaCorrenteRicardo.sacar(50)
+contaCorrenteRicardo.depositar(100);
+contaCorrenteRicardo.depositar(100);
+contaCorrenteRicardo.sacar(50);
 
-console.log(contaCorrenteRicardo)
+console.log(contaCorrenteRicardo);
