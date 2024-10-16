@@ -1,5 +1,5 @@
-import { Cliente } from "./cliente";
-import { ContaCorrente } from "./ContaCorrente";
+import { Cliente } from "./Cliente.js";
+import { ContaCorrente } from "./ContaCorrente.js";
 
 const cliente1 = new Cliente();
 
@@ -13,13 +13,15 @@ cliente2.cpf = 88822233309;
 
 const contaCorrenteRicardo = new ContaCorrente();
 contaCorrenteRicardo.agencia = 1001;
-contaCorrenteRicardo.saldo = 0;
+contaCorrenteRicardo.cliente = cliente1;
+contaCorrenteRicardo.depositar(500);
 // para um valor privado de saldo, teria q ser escrito #saldo MAS isso ainda não está implementado na linguagem
+const conta2 = new ContaCorrente();
+conta2.cliente = cliente2;
+conta2.agencia = 102;
 
-contaCorrenteRicardo.depositar(100);
-contaCorrenteRicardo.depositar(100);
-contaCorrenteRicardo.depositar(100);
- const valorSacado = contaCorrenteRicardo.sacar(50);
+console.log(conta2)
 
- console.log(valorSacado);
-console.log(contaCorrenteRicardo);
+contaCorrenteRicardo.transferir(200, conta2);
+console.log(conta2)
+console.log(contaCorrenteRicardo)
