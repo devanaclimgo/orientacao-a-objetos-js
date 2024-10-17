@@ -38,4 +38,9 @@ export class ContaCorrente {
     const valorSacado = this.sacar(valor);
     conta.depositar(valorSacado);
   }
+
+  constructor(cliente, agencia) {
+    this.cliente = cliente;
+    this.agencia = agencia;
+  }
 }
